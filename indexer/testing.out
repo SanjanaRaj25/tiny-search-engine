@@ -1,0 +1,127 @@
+make[1]: Entering directory '/thayerfs/home/f005d01/cs50-dev/tse-SanjanaRaj25/indexer'
+make[1]: 'indexer' is up to date.
+make[1]: Leaving directory '/thayerfs/home/f005d01/cs50-dev/tse-SanjanaRaj25/indexer'
+make[1]: Entering directory '/thayerfs/home/f005d01/cs50-dev/tse-SanjanaRaj25/indexer'
+make[1]: 'indextest' is up to date.
+make[1]: Leaving directory '/thayerfs/home/f005d01/cs50-dev/tse-SanjanaRaj25/indexer'
+indexer requires exactly 2 arguments, usage = ./indexer pageDirectory indexFilenamenot enough arguments, returned non-zero
+test 1 passed!
+indexer requires exactly 2 arguments, usage = ./indexer pageDirectory indexFilenamenot enough arguments, returned non-zero
+test 2 passed!
+indexer requires exactly 2 arguments, usage = ./indexer pageDirectory indexFilenametoo many arguments, returned non-zero
+test 3 passed!
+the .crawler file in the given pageDirectory could not be opened
+returned non-zero
+test 4 passed!
+the .crawler file in the given pageDirectory could not be opened
+returned non-zero
+test 5 passed!
+the .crawler file in the given pageDirectory could not be opened
+returned non-zero
+test 6 passed!
+the .crawler file in the given pageDirectory could not be opened
+returned non-zero
+test 7 passed!
+file could not be written intoreturned non-zero
+test 8 passed!
+test passed on letters, depth 3
+test passed on letters, depth 10
+test passed on wikipedia, depth 1
+test passed on wikipedia, depth 2
+test passed on to scrape, depth 1
+make[1]: Entering directory '/thayerfs/home/f005d01/cs50-dev/tse-SanjanaRaj25/indexer'
+valgrind -s --leak-check=full --show-leak-kinds=all ./indexer ../crawler/data/letters/depth3 ../crawler/data/letters/depth3/index
+==3597041== Memcheck, a memory error detector
+==3597041== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3597041== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==3597041== Command: ./indexer ../crawler/data/letters/depth3 ../crawler/data/letters/depth3/index
+==3597041== 
+==3597041== 
+==3597041== HEAP SUMMARY:
+==3597041==     in use at exit: 6,055 bytes in 276 blocks
+==3597041==   total heap usage: 897 allocs, 621 frees, 141,155 bytes allocated
+==3597041== 
+==3597041== 8 bytes in 1 blocks are still reachable in loss record 1 of 10
+==3597041==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3597041==    by 0x10B033: index_new (index.c:41)
+==3597041==    by 0x10A7EE: indexBuild (indexer.c:81)
+==3597041==    by 0x10AA3A: main (indexer.c:152)
+==3597041== 
+==3597041== 16 bytes in 1 blocks are still reachable in loss record 2 of 10
+==3597041==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3597041==    by 0x10B99A: hashtable_new (hashtable.c:28)
+==3597041==    by 0x10B04F: index_new (index.c:47)
+==3597041==    by 0x10A7EE: indexBuild (indexer.c:81)
+==3597041==    by 0x10AA3A: main (indexer.c:152)
+==3597041== 
+==3597041== 103 bytes in 15 blocks are still reachable in loss record 3 of 10
+==3597041==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3597041==    by 0x10C152: set_insert (set.c:64)
+==3597041==    by 0x10BACF: hashtable_insert (hashtable.c:66)
+==3597041==    by 0x10B2F4: index_insert (index.c:141)
+==3597041==    by 0x10A719: indexPage (indexer.c:57)
+==3597041==    by 0x10A84C: indexBuild (indexer.c:92)
+==3597041==    by 0x10AA3A: main (indexer.c:152)
+==3597041== 
+==3597041== 120 bytes in 15 blocks are still reachable in loss record 4 of 10
+==3597041==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3597041==    by 0x10B620: counters_new (counters.c:51)
+==3597041==    by 0x10A6ED: indexPage (indexer.c:55)
+==3597041==    by 0x10A84C: indexBuild (indexer.c:92)
+==3597041==    by 0x10AA3A: main (indexer.c:152)
+==3597041== 
+==3597041== 288 bytes in 12 blocks are still reachable in loss record 5 of 10
+==3597041==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3597041==    by 0x10B5DE: counter_new (counters.c:35)
+==3597041==    by 0x10B6B9: counters_add (counters.c:82)
+==3597041==    by 0x10A743: indexPage (indexer.c:62)
+==3597041==    by 0x10A84C: indexBuild (indexer.c:92)
+==3597041==    by 0x10AA3A: main (indexer.c:152)
+==3597041== 
+==3597041== 360 bytes in 15 blocks are still reachable in loss record 6 of 10
+==3597041==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3597041==    by 0x10B5DE: counter_new (counters.c:35)
+==3597041==    by 0x10B6B9: counters_add (counters.c:82)
+==3597041==    by 0x10A702: indexPage (indexer.c:56)
+==3597041==    by 0x10A84C: indexBuild (indexer.c:92)
+==3597041==    by 0x10AA3A: main (indexer.c:152)
+==3597041== 
+==3597041== 360 bytes in 15 blocks are still reachable in loss record 7 of 10
+==3597041==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3597041==    by 0x10C136: set_insert (set.c:63)
+==3597041==    by 0x10BACF: hashtable_insert (hashtable.c:66)
+==3597041==    by 0x10B2F4: index_insert (index.c:141)
+==3597041==    by 0x10A719: indexPage (indexer.c:57)
+==3597041==    by 0x10A84C: indexBuild (indexer.c:92)
+==3597041==    by 0x10AA3A: main (indexer.c:152)
+==3597041== 
+==3597041== 1,600 bytes in 1 blocks are still reachable in loss record 8 of 10
+==3597041==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3597041==    by 0x10B9E5: hashtable_new (hashtable.c:39)
+==3597041==    by 0x10B04F: index_new (index.c:47)
+==3597041==    by 0x10A7EE: indexBuild (indexer.c:81)
+==3597041==    by 0x10AA3A: main (indexer.c:152)
+==3597041== 
+==3597041== 1,600 bytes in 200 blocks are still reachable in loss record 9 of 10
+==3597041==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3597041==    by 0x10C0B0: set_new (set.c:36)
+==3597041==    by 0x10BA0C: hashtable_new (hashtable.c:41)
+==3597041==    by 0x10B04F: index_new (index.c:47)
+==3597041==    by 0x10A7EE: indexBuild (indexer.c:81)
+==3597041==    by 0x10AA3A: main (indexer.c:152)
+==3597041== 
+==3597041== 1,600 bytes in 1 blocks are definitely lost in loss record 10 of 10
+==3597041==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3597041==    by 0x10B9C9: hashtable_new (hashtable.c:36)
+==3597041==    by 0x10B04F: index_new (index.c:47)
+==3597041==    by 0x10A7EE: indexBuild (indexer.c:81)
+==3597041==    by 0x10AA3A: main (indexer.c:152)
+==3597041== 
+==3597041== LEAK SUMMARY:
+==3597041==    definitely lost: 1,600 bytes in 1 blocks
+==3597041==    indirectly lost: 0 bytes in 0 blocks
+==3597041==      possibly lost: 0 bytes in 0 blocks
+==3597041==    still reachable: 4,455 bytes in 275 blocks
+==3597041==         suppressed: 0 bytes in 0 blocks
+
+
